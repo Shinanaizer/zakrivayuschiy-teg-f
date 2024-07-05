@@ -415,10 +415,6 @@
   mix-blend-mode: difference;
 }
 
-.capitalize {
-  text-transform: capitalize;
-}
-
 .floppy-image {
   width: 28px;
   height: 28px;
@@ -518,5 +514,10 @@
   .footer-button {
     flex-direction: row;
     gap: 10px;
+  }
+
+  .floppy-image {
+    width: 21px;
+    height: 21px;
   }
 }
