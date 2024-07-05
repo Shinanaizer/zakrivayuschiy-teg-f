@@ -24,7 +24,7 @@
 }
 
 .header {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Arial, sans-serif;
   text-transform: uppercase;
   min-width: 371px;
   min-height: 323px;
@@ -59,12 +59,18 @@
 
 .theme-menu__list {
   display: grid;
-  gap: 14px;
+  gap: 11px;
 }
 
 .theme-menu__button {
   text-transform: uppercase;
   transition: width 0.5s, background-color 0.5s, opacity 0.3s;
+  width: 84px;
+  height: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  cursor: pointer;
 }
 
 .theme-menu__button:disabled {
@@ -79,16 +85,6 @@
   left: -20px;
   top: 0px;
   animation: pointer-move 0.5s ease-in-out infinite alternate;
-}
-
-@keyframes pointer-move {
-  from {
-    transform: translateX(0)
-  }
-
-  to {
-    transform: translateX(4px)
-  }
 }
 
 .theme-menu__button::after {
@@ -111,16 +107,6 @@
 
 .theme-menu__button:hover {
   animation: hover-effect 0.3s forwards ease;
-}
-
-@keyframes hover-effect {
-  from {
-    opacity: 100%;
-  }
-
-  to {
-    opacity: 60%;
-  }
 }
 
 .theme-menu__button:focus {
@@ -146,23 +132,29 @@
 
 .card-title {
   min-width: 371px;
-  font-family: var(--main-font);
+  font-family: var(--main-font), Arial, sans-serif;
   background-color: var(--background-color);
   border: solid 2px var(--accent-color);
+  font-weight: var(--title-font-weight);
+  font-size: 18px;
   padding: 5px 10px;
 }
 
 .image-container {
   position: relative;
-  border: solid 2px var(--accent-color);
+  border-width: 0px 2px; 
+  border-style: solid;
+  border-color: var(--accent-color);
   overflow: hidden;
+  max-width: 375px;
+  aspect-ratio: 1 / 1;
 }
 
 .watermark {
   position: absolute;
   top: 25px;
   right: 13px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Arial, sans-serif;
   color: var(--accent-color);
   text-transform: uppercase;
   text-shadow: 0 0 2px var(--background-color),
@@ -234,13 +226,13 @@
 }
 
 .card-text {
-  font-family: var(--main-font);
+  font-family: var(--main-font), Arial, sans-serif;
   font-weight: var(--regular-font-weight);
   font-size: 18px;
   line-height: 21px;
 }
 
-.card-text:first-of-type {
+.content-section .card-text:first-child {
   margin-top: 25px;
 }
 
@@ -248,7 +240,7 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .card__icon-button {
@@ -257,6 +249,7 @@
   transform-origin: center;
   padding: 0;
   position: relative;
+  cursor: pointer;
 }
 
 .card__icon-button:focus {
@@ -270,7 +263,6 @@
 .like-icon {
   transition-timing-function: linear;
 }
-
 
 .sparks {
   opacity: 0;
@@ -315,52 +307,6 @@
   animation-fill-mode: forwards;
 }
 
-.like-icon.is-liked .core {
-  fill: var(--heart-fill-color);
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--heart-fill-color);
-  transition: fill 0.3s 0.05s;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--heart-fill-color);
-  transition: fill 0.3s 0.06s;
-}
-
-.like-icon.is-liked .heart {
-  animation: size-scale ease-in 0.3s 0.1s 2 alternate;
-  transform-origin: 0 0;
-}
-
-@keyframes size-scale {
-  from {
-    transform-origin: center;
-    transform: scale(1);
-  }
-
-  to {
-    transform-origin: center;
-    transform: scale(1.5);
-  }
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks-opacity ease-in 0.3s 0.3s 2 alternate;
-}
-
-@keyframes sparks-opacity {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 100%;
-    ;
-  }
-}
-
 .card__like-button {
   width: 130px;
   height: 38px;
@@ -368,6 +314,7 @@
   padding: 9px 17px;
   transition: box-shadow 0.3s;
   position: relative;
+  cursor: pointer;
 }
 
 .card__like-button::before {
@@ -389,18 +336,8 @@
 
 }
 
-@keyframes black-box {
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
-  }
-}
-
 .button__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Arial, sans-serif;
   font-weight: var(--regular-font-weight);
   font-size: 14px;
   line-height: 12.6px;
@@ -439,6 +376,7 @@
   row-gap: 10px;
   border: solid 2px var(--accent-color);
   position: relative;
+  cursor: pointer;
 }
 
 .footer-button:focus {
@@ -498,7 +436,7 @@
   background-color: var(--background-color);
   border: 2px solid var(--accent-color);
   color: var(--accent-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Arial, sans-serif;
   text-transform: uppercase;
   row-gap: 30px;
 }
@@ -521,8 +459,7 @@
 }
 
 .modal-text {
-  width: 198px;
-  height: 63px;
+  max-width: 198px;
   font-weight: var(--regular-font-weight);
   font-size: 14px;
   line-height: 21px;
@@ -534,6 +471,7 @@
   width: 257px;
   height: 38px;
   position: relative;
+  cursor: pointer;
 }
 
 .modal-button:focus {
@@ -567,7 +505,16 @@
   animation: black-box 0.5s ease-in-out forwards;
 }
 
-@media (width >=375px) {
+@media (width >=376px) {
+
+  .header {
+    min-height: 368px;
+  }
+
+  .image-container {
+    max-width: 700px;
+  }
+
   .footer-button {
     flex-direction: row;
     gap: 10px;
